@@ -1,4 +1,0 @@
-npm init -y
-npm install express
-mkdir public
-node server.js
