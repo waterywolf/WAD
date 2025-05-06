@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Home</title>
+
+    <!-- jQuery Mobile CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+    <!-- Custom CSS (optional) -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- jQuery and jQuery Mobile JS -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Home Page -->
+    <div data-role="page" id="home">
+        <div data-role="header" data-position="fixed">
+            <h1>Mobile App</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" class="ui-btn-active ui-state-persist">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h2>Welcome to our Mobile App</h2>
+            <p>This is a simple mobile website built with jQuery Mobile.</p>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a href="#feature1" data-role="button" data-transition="slide">Feature 1</a>
+                </div>
+                <div class="ui-block-b">
+                    <a href="#feature2" data-role="button" data-transition="slide">Feature 2</a>
+                </div>
+            </div>
+
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#">
+                        <img src="https://via.placeholder.com/80x80">
+                        <h2>Item 1</h2>
+                        <p>Description of item 1</p>
+                    </a></li>
+                <li><a href="#">
+                        <img src="https://via.placeholder.com/80x80">
+                        <h2>Item 2</h2>
+                        <p>Description of item 2</p>
+                    </a></li>
+            </ul>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>&copy; 2023 Mobile App</h4>
+        </div>
+    </div>
+
+    <!-- Feature 1 Page -->
+    <div data-role="page" id="feature1" data-add-back-btn="true">
+        <div data-role="header">
+            <h1>Feature 1</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h2>Feature One Details</h2>
+            <p>This is the detailed information about feature one.</p>
+            <a href="#home" data-role="button" data-rel="back">Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Feature 2 Page -->
+    <div data-role="page" id="feature2" data-add-back-btn="true">
+        <div data-role="header">
+            <h1>Feature 2</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h2>Feature Two Details</h2>
+            <p>This is the detailed information about feature two.</p>
+            <a href="#home" data-role="button" data-rel="back">Back to Home</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

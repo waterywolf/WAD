@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+
+    <div data-role="page" id="contact">
+        <div data-role="header" data-position="fixed">
+            <a href="#" data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-left">Back</a>
+            <h1>Contact Us</h1>
+            <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name">
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message"></textarea>
+
+                    <fieldset data-role="controlgroup">
+                        <legend>Contact Method:</legend>
+                        <input type="radio" name="contact-method" id="contact-email" value="email" checked>
+                        <label for="contact-email">Email</label>
+
+                        <input type="radio" name="contact-method" id="contact-phone" value="phone">
+                        <label for="contact-phone">Phone</label>
+                    </fieldset>
+
+                    <button type="submit" class="ui-btn ui-btn-b">Submit</button>
+                </div>
+            </form>
+
+            <h3>Our Location</h3>
+            <div class="ui-bar ui-bar-a ui-corner-all">
+                <p>123 Mobile Street<br>App City, AP 12345</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@mobileapp.com</p>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>&copy; 2023 Mobile App</h4>
+        </div>
+    </div>
+
+</body>
+
+</html>

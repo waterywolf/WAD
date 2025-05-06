@@ -1,0 +1,29 @@
+/* Custom styles to enhance the default jQuery Mobile theme */
+.ui-page {
+    background: #f9f9f9;
+}
+
+.ui-header .ui-title {
+    text-shadow: none;
+}
+
+.ui-btn-active {
+    background: #4CAF50 !important;
+    border-color: #4CAF50 !important;
+}
+
+.ui-listview li > a {
+    padding: 1em 1em;
+}
+
+.ui-field-contain {
+    padding: 0.5em 0;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .ui-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
