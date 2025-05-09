@@ -1,0 +1,52 @@
+
+Salesforce Hospital Management Application Setup
+=================================================
+
+1. Create a Salesforce Lightning App
+------------------------------------
+- Go to Setup > App Manager > New Lightning App
+- Name: Hospital Management
+- Add navigation items: Patient, Appointment
+
+2. Create Custom Object: Patient__c
+-----------------------------------
+Fields:
+- First Name (API: First_Name__c, Text 50, Required)
+- DOB (API: DOB__c, Date, Required)
+- Email (API: Email__c, Email, Required, Unique)
+- Phone (API: Phone__c, Phone)
+- Gender (API: Gender__c, Picklist: Male, Female, Other)
+- Registration Date (API: Registration_Date__c, Date)
+
+Validation Rules for Patient__c:
+1. Valid_Phone_Length
+   Formula: NOT(ISBLANK(Phone__c)) && LEN(Phone__c) <> 10
+   Message: Phone number must be exactly 10 digits
+
+2. DOB_Cannot_Be_Future
+   Formula: DOB__c > TODAY()
+   Message: Date of Birth cannot be in the future
+
+3. Valid_Registration_Date
+   Formula: Registration_Date__c > TODAY()
+   Message: Registration date cannot be in the future
+
+3. Create Custom Object: Appointment__c
+----------------------------------------
+Fields:
+- Appointment Date (API: Appointment_Date__c, DateTime)
+- Reason for Visit (API: Reason__c, Text Area 255, Required)
+- Status (API: Status__c, Picklist: Scheduled, Completed, Cancelled)
+- Patient (API: Patient__c, Lookup to Patient__c, Required)
+- Doctor Name (API: Doctor_Name__c, Text 100)
+
+Validation Rules for Appointment__c:
+4. Appointment_Not_Past
+   Formula: Appointment_Date__c < NOW()
+   Message: Appointment date must be today or in the future
+
+5. Reason_Required
+   Formula: ISBLANK(Reason__c)
+   Message: Reason for visit is required
+
+Note: For field requirements like "Required", set it during field creation.
