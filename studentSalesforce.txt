@@ -1,0 +1,57 @@
+
+Salesforce Student Management System Setup
+===========================================
+
+1. Create a Salesforce Lightning App
+------------------------------------
+- Go to Setup > App Manager > New Lightning App
+- Name: Student Management System
+- Add navigation items: Student, Course Enrollment, Reports
+
+2. Create Custom Object: Student__c
+-----------------------------------
+Fields:
+- First Name (API: First_Name__c, Text 50, Required)
+- Last Name (API: Last_Name__c, Text 50, Required)
+- Email (API: Email__c, Email, Required, Unique)
+- Phone (API: Phone__c, Phone)
+- DOB (API: DOB__c, Date)
+- Enrollment Date (API: Enrollment_Date__c, Date)
+- Status (API: Status__c, Picklist: Enrolled, Graduated, Dropped)
+- Gender (API: Gender__c, Picklist: Male, Female, Other)
+
+Validation Rules for Student__c:
+1. Valid_Phone_Length
+   Formula: NOT(ISBLANK(Phone__c)) && LEN(Phone__c) <> 10
+   Message: Phone number must be exactly 10 digits
+
+2. Valid_Enrollment_Date
+   Formula: Enrollment_Date__c > TODAY()
+   Message: Enrollment date cannot be in the future
+
+3. First_Name_Required
+   Formula: ISBLANK(First_Name__c)
+   Message: First Name is required
+
+4. Last_Name_Required
+   Formula: ISBLANK(Last_Name__c)
+   Message: Last Name is required
+
+Note: Email field is marked as Required + Unique during field creation.
+
+3. Create Custom Object: Course_Enrollment__c
+---------------------------------------------
+Fields:
+- Course Name (API: Course_Name__c, Text 100)
+- Enrollment Date (API: Enrollment_Date__c, Date)
+- Completion Date (API: Completion_Date__c, Date)
+- Grade (API: Grade__c, Text 10)
+- Student (API: Student__c, Lookup to Student__c)
+
+4. Report Tab
+-------------
+- Go to Reports > New Report
+- Choose Report Type: Students
+- Add Group By: Gender__c
+- Add Row Count to show total number of Male, Female, Other students
+- Save and Add Report to Lightning Page using Report Chart component
