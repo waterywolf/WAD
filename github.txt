@@ -1,0 +1,9 @@
+mkdir folder1
+cd folder1
+echo "This is a test file" > test.txt
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/waterywolf/demorep.git
+git push -u origin main
