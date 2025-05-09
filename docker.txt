@@ -27,3 +27,17 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
   
 sudo docker run hello-world
 
+
+
+
+sudo apt install docker.io
+sudo docker pull openjdk
+sudo docker images
+sudo docker run -it -d openjdk
+sudo docker ps
+sudo docker exec -it "contID" jshell
+
+int a = 6 ;
+int b = 8 ;
+sout (a+b) ;
+
