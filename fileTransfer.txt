@@ -1,0 +1,24 @@
+Install Vgrant Windows AMD 64
+Create 2 folders VM1 and VM2. Open with git bash in VM1
+Go to HashiCorp cloud platform
+Search bento and click on bento ubuntu 16.04
+Copy step 1 command and paste in git bash
+Click on Vagrant file and edit in notepad
+Uncomment private and public  network
+Uncomment vm.provider [vb] and end
+Save it
+
+Come to bash and type vagrant up then vagrant ssh
+
+
+DO THE SAME IN VM2
+
+Open both side by side
+
+In VM1: vi abc.txt -> Press I (insert) -> type Hello ji -> save (esc + : + wq) -> enter.
+type ls and abc.txt will show
+scp abc.txt vagrant@IPAddress/home/vagrant -> yes -> password:vagrant
+
+In VM2 : ifconfig -> copy ip address.
+at last ls and cat
+
